@@ -1,9 +1,13 @@
 <div ng-controller="HomeViewController">
     <div ng-hide="found" id="finding">Finding hairdressers near you...</div>
-    <ol>
-        <div ng-show="found" ng-repeat="searchResult in searchResults | limitTo: limit">
-            <li>{{searchResult.name}} - {{searchResult.vicinity}}</li>
-        </div>
-    </ol>
-    <div ng-show="found && limit < 20" ng-click="show3More()">click for more</div>
+    <md-progress-circular md-mode="indeterminate" ng-hide="found"></md-progress-circular>
+    <md-list ng-show="found">
+        <md-item ng-repeat="searchResult in searchResults | limitTo: limit">
+            <md-item-content>
+                <md-subheader class="md-tile-left">{{searchResult.name}}</md-subheader>
+                <div class="md-tile-content">{{searchResult.vicinity}}</div>
+            </md-item-content>
+        </md-item>
+    </md-list>
+    <md-button ng-show="found && limit < 20" ng-click="show3More()" class="md-raised">click for more</md-button>
 </div>

@@ -1,6 +1,6 @@
 'use strict';
 
-angular.module('myApp.homeView', ['ngRoute'])
+angular.module('myApp.homeView', ['ngRoute', 'ngMaterial'])
 
 .config(['$routeProvider', function($routeProvider) {
   $routeProvider.when('/homeView', {
