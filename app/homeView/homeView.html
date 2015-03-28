@@ -8,10 +8,10 @@
                     <img ng-show="searchResult.photos" ng-src="{{searchResult.photos[0].url}}" />
                     <img ng-hide="searchResult.photos" ng-src="content/scissors100x100.png" />
                 </div>
-                <div layout="column">
+                <md-button layout="column" ng-click="goToMap(searchResult.geometry.location.lat(), searchResult.geometry.location.lng())">
                     <div class="md-tile-content">{{searchResult.name}}</div>
                     <div class="md-tile-content">{{searchResult.vicinity}}</div>
-                </div>
+                </md-button>
                 <div layout="column">
                     <div class="md-tile-content" ng-show="searchResult.phoneNumber"> number {{searchResult.phoneNumber}}</div>
                     <div class="md-tile-content" ng-show="searchResult.phoneNumber"> number {{searchResult.phoneNumber}}</div>
@@ -26,4 +26,5 @@
         </md-item>
     </md-list>
     <md-button ng-show="found && limit < 20" ng-click="show3More()" class="md-raised">see more</md-button>
+    <div id="map-canvas"></div>
 </div>
