@@ -19,16 +19,16 @@
   <meta name="viewport" content="initial-scale=1, maximum-scale=1" />
 </head>
 <body>
-
-
-<div id="map-canvas"></div>
   <!--[if lt IE 7]>
       <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
   <![endif]-->
-    <img class="mainLogo" src="Content/ChopSnipJump.png" alt="ChopSnipJump logo" />
+  <md-toolbar layout="row">
+    <img class="mainLogo" src="Content/ChopSnipJump.png" alt="ChopSnipJump logo"/>
+    <h2 clas="md-display-2">Your next haircut is just a Chop, Snip and a Jump away</h2>
+  </md-toolbar>
+  <div ng-view class="content"></div>
 
-  <div ng-view></div>
-
+  <div id="map-canvas"></div>
   <!-- In production use:
   <script src="//ajax.googleapis.com/ajax/libs/angularjs/x.x.x/angular.min.js"></script>
   -->
