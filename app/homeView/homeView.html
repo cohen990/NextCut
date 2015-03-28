@@ -1,4 +1,9 @@
 <div ng-controller="HomeViewController">
-<div id="finding">Finding hairdressers near you...</div>
-<div id="render"></div>
+    <div ng-hide="found" id="finding">Finding hairdressers near you...</div>
+    <ol>
+        <div ng-show="found" ng-repeat="searchResult in searchResults | limitTo: limit">
+            <li>{{searchResult.name}} - {{searchResult.vicinity}}</li>
+        </div>
+    </ol>
+    <div ng-show="found && limit < 20" ng-click="show3More()">click for more</div>
 </div>
