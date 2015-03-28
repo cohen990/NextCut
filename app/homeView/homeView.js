@@ -19,13 +19,10 @@ angular.module('myApp.homeView', ['ngRoute', 'ngMaterial'])
     $scope.limit = 3;
 
     $scope.getLocation = function() {
-        console.log("hi :D");
         if (navigator.geolocation) {
             var id = navigator.geolocation.watchPosition($scope.findHairdressers, $scope.showError);
-            console.log("done");
         } else {
             finding.innerHTML = "Geolocation is not supported by this browser.";
-            console.log("error");
         }
     }
 
@@ -34,8 +31,6 @@ angular.module('myApp.homeView', ['ngRoute', 'ngMaterial'])
     }
 
     $scope.findHairdressers = function(position) {
-        console.log("maps");
-
         var render = document.getElementById("map-canvas");
         var service = new google.maps.places.PlacesService(render);
         var request = {
@@ -57,8 +52,6 @@ angular.module('myApp.homeView', ['ngRoute', 'ngMaterial'])
         $scope.searchResults = results;
         $scope.found = true;
         $scope.$apply();
-
-        console.log(results);
     }
 
     $scope.show3More = function(){
