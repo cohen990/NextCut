@@ -13,8 +13,24 @@
   <link rel="stylesheet" href="bower_components/html5-boilerplate/css/main.css">
   <link rel="stylesheet" href="css/site.css">
   <script src="bower_components/html5-boilerplate/js/vendor/modernizr-2.6.2.min.js"></script>
+  <script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBM9frX0JkW4ddbq5ZouVBizS52xD6DhOU"></script>
+  <script type="text/javascript">
+      // function initialize() {
+      //   var mapOptions = {
+      //     center: { lat: -34.397, lng: 150.644},
+      //     zoom: 8
+      //   };
+      //   var map = new google.maps.Map(document.getElementById('map-canvas'),
+      //       mapOptions);
+      // }
+      // google.maps.event.addDomListener(window, 'load', initialize);
+  </script>
+
 </head>
 <body>
+
+
+<div id="map-canvas"></div>
   <!--[if lt IE 7]>
       <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
   <![endif]-->
@@ -29,5 +45,5 @@
   <script src="bower_components/angular-route/angular-route.js"></script>
   <script src="app.js"></script>
   <script src="homeView/homeView.js"></script>
-</body>
+  </body>
 </html>
