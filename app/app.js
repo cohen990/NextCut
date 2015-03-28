@@ -4,7 +4,8 @@
 angular.module('myApp', [
   'ngRoute',
   'ngMaterial',
-  'myApp.homeView'
+  'myApp.homeView',
+  'myApp.mapView',
 ]).
 config(function($routeProvider, $mdThemingProvider) {
   $routeProvider.otherwise({redirectTo: '/homeView'});

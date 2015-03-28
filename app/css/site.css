@@ -23,3 +23,7 @@ h2{
 .greyed-out{
     color:#aaa;
 }
+
+#map-canvas{
+    height:300px;
+}

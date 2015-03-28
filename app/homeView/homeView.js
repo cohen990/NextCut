@@ -9,7 +9,7 @@ angular.module('myApp.homeView', ['ngRoute', 'ngMaterial'])
   });
 }])
 
-.controller('HomeViewController', ['$scope', function($scope)  {
+.controller('HomeViewController', ['$scope', '$location', function($scope, $location)  {
     var finding = document.getElementById("finding");
 
     $scope.found = false;
@@ -49,6 +49,8 @@ angular.module('myApp.homeView', ['ngRoute', 'ngMaterial'])
         var results = $scope.getAllImages(results);
         var results = $scope.getAllPhoneNumbers(results);
 
+        console.log(results);
+        console.log("Hi")
         $scope.searchResults = results;
         $scope.found = true;
         $scope.$apply();
@@ -81,6 +83,10 @@ angular.module('myApp.homeView', ['ngRoute', 'ngMaterial'])
         };
 
         return results;
+    }
+
+    $scope.goToMap = function(latitude, longitude){
+        $location.path("/mapView/" + latitude + "/" + longitude);
     }
 
     $scope.getLocation();
