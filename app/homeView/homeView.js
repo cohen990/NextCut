@@ -52,6 +52,7 @@ angular.module('myApp.homeView', ['ngRoute', 'ngMaterial'])
 
     $scope.printResults = function(results){
         var results = $scope.getAllImages(results);
+        var results = $scope.getAllPhoneNumbers(results);
 
         $scope.searchResults = results;
         $scope.found = true;
@@ -70,6 +71,19 @@ angular.module('myApp.homeView', ['ngRoute', 'ngMaterial'])
                 for (var j = 0; j < results[i].photos.length; j++) {
                     results[i].photos[j].url = results[i].photos[j].getUrl({maxHeight:160, maxWidth:160});
                 };
+            }
+        };
+
+        return results;
+    }
+
+    $scope.getAllPhoneNumbers = function(results){
+        for (var i = 0; i < results.length; i++) {
+            if(results[i].formatted_phone_number){
+                results[i].phoneNumber = results[i].formatted_phone_number;
+            }
+            else if(results[i].international_phone_number){
+                results[i].phoneNumber = results[i].international_phone_number;
             }
         };
 
