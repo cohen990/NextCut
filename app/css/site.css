@@ -1,4 +1,25 @@
 .mainLogo{
-    width: 160px;
-    height: 60px;
+    width: 200px;
+    height: 90px;
+    margin-left: 10px;
+}
+
+h2{
+    font:"Trebuchet MS";
+    color:white;
+    font-style: italic;
+}
+
+.resultImage{
+    height:160px;
+    width:160px;
+}
+
+.content{
+    padding-left:5px;
+    padding-right:5px;
+}
+
+.greyed-out{
+    color:#aaa;
 }
