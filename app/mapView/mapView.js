@@ -16,13 +16,7 @@ angular.module('myApp.mapView', ['ngRoute', 'ngMaterial'])
             zoom: 19
         };
 
-        console.log(mapOptions);
-
-        console.log("hi")
-
         var map = new google.maps.Map(document.getElementById('map-canvas'),
                                       mapOptions);
     }
-
-    $scope.initializeMap();
 }]);
