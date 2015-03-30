@@ -23,7 +23,7 @@ angular.module('myApp.mapView', ['ngRoute', 'ngMaterial'])
         localStorage["originLongitude"]
       );
       var mapOptions = {
-        zoom:7,
+        zoom:48,
         center: currentLocation
       }
       map = new google.maps.Map(document.getElementById("map-canvas"), mapOptions);
