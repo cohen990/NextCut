@@ -15,11 +15,16 @@ angular.module('myApp.mapView', ['ngRoute', 'ngMaterial'])
     var map;
 
     function intializeMap() {
-      directionsDisplay = new google.maps.DirectionsRenderer();
-      var chicago = new google.maps.LatLng( localStorage["originLatitude"] , localStorage["originLongitude"]);
+      directionsDisplay = new google.maps.DirectionsRenderer({
+        panel: document.getElementById("directions-info")
+      });
+      var currentLocation = new google.maps.LatLng(
+        localStorage["originLatitude"],
+        localStorage["originLongitude"]
+      );
       var mapOptions = {
         zoom:7,
-        center: chicago
+        center: currentLocation
       }
       map = new google.maps.Map(document.getElementById("map-canvas"), mapOptions);
       directionsDisplay.setMap(map);
