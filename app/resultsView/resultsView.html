@@ -1,0 +1,30 @@
+<div ng-controller="ResultsController">
+    <div ng-hide="found" id="finding">Finding hairdressers near you...</div>
+    <md-progress-circular md-mode="indeterminate" ng-hide="found"></md-progress-circular>
+    <md-list ng-show="found">
+        <md-item ng-repeat="searchResult in searchResults | limitTo: limit">
+            <md-item-content layout="row" layout-align="start start" >
+                <div class="resultImage" layout="row" layout-align="center center">
+                    <img ng-show="searchResult.photos" ng-src="{{searchResult.photos[0].url}}" />
+                    <img ng-hide="searchResult.photos" ng-src="content/scissors100x100.png" />
+                </div>
+                <md-button layout="column" ng-click="goToMap(searchResult.geometry.location.lat(), searchResult.geometry.location.lng())">
+                    <div class="md-tile-content">{{searchResult.name}}</div>
+                    <div class="md-tile-content">{{searchResult.vicinity}}</div>
+                </md-button>
+                <div layout="column">
+                    <div class="md-tile-content" ng-show="searchResult.phoneNumber"> number {{searchResult.phoneNumber}}</div>
+                    <div class="md-tile-content" ng-show="searchResult.phoneNumber"> number {{searchResult.phoneNumber}}</div>
+                    <div class="md-tile-content greyed-out" ng-hide="searchResult.phoneNumber">no phone number...</div>
+                    <md-whiteframe class="md-whiteframe-z2 md-tile-content" ng-hide="!searchResult.rating">Rating: {{searchResult.rating}}</md-whiteframe>
+                    <md-whiteframe class="md-whiteframe-z1 md-tile-content" ng-show="!searchResult.rating">Rating Unknown</md-whiteframe>
+
+                </div>
+            </md-item-content>
+
+        <md-divider md-inset ng-if="!$last"></md-divider>
+        </md-item>
+    </md-list>
+    <md-button ng-show="found && limit < 20" ng-click="show3More()" class="md-raised">see more</md-button>
+    <div id="map-canvas"></div>
+</div>
