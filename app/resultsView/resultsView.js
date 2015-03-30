@@ -31,7 +31,9 @@ angular.module('myApp.resultsView', ['ngRoute', 'ngMaterial'])
     }
 
     $scope.findHairdressers = function(position) {
-        var render = document.getElementById("map-canvas");
+        localStorage["originLatitude"] = position.coords.latitude;
+        localStorage["originLongitude"] = position.coords.longitude;
+        var render = document.getElementById("empty-map-canvas");
         var service = new google.maps.places.PlacesService(render);
         var request = {
             location: {
@@ -86,6 +88,9 @@ angular.module('myApp.resultsView', ['ngRoute', 'ngMaterial'])
     }
 
     $scope.goToMap = function(latitude, longitude){
+        localStorage["destinationLatitude"] = latitude;
+        localStorage["destinationLongitude"] = longitude;
+
         $location.path("/mapView/" + latitude + "/" + longitude);
     }
 
