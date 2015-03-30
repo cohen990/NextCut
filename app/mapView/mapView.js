@@ -36,7 +36,7 @@ angular.module('myApp.mapView', ['ngRoute', 'ngMaterial'])
       var request = {
         origin:start,
         destination:end,
-        travelMode: google.maps.TravelMode.DRIVING
+        travelMode: google.maps.TravelMode.WALKING
       };
       directionsService.route(request, function(result, status) {
         if (status == google.maps.DirectionsStatus.OK) {
