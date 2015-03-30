@@ -3,7 +3,7 @@
     <md-progress-circular md-mode="indeterminate" ng-hide="found"></md-progress-circular>
     <md-list ng-show="found">
         <md-item ng-repeat="searchResult in searchResults | limitTo: limit">
-            <md-item-content layout="row" layout-align="start start" >
+            <md-item-content layout="row" layout-sm="column" layout-align="start start" >
                 <div class="resultImage" layout="row" layout-align="center center">
                     <img ng-show="searchResult.photos" ng-src="{{searchResult.photos[0].url}}" />
                     <img ng-hide="searchResult.photos" ng-src="content/scissors100x100.png" />
