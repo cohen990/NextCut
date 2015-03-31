@@ -3,13 +3,13 @@
 angular.module('myApp.mapView', ['ngRoute', 'ngMaterial'])
 
 .config(['$routeProvider', function($routeProvider) {
-  $routeProvider.when('/mapView/:latitude/:longitude', {
+  $routeProvider.when('/mapView', {
     templateUrl: 'mapView/mapView.html',
     controller: 'MapViewController'
 });
 }])
 
-.controller('MapViewController', ['$scope', '$routeParams', function($scope, $routeParams)  {
+.controller('MapViewController', ['$scope', function($scope)  {
     var directionsDisplay;
     var directionsService = new google.maps.DirectionsService();
     var map;

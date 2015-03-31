@@ -91,7 +91,7 @@ angular.module('myApp.resultsView', ['ngRoute', 'ngMaterial'])
         localStorage["destinationLatitude"] = latitude;
         localStorage["destinationLongitude"] = longitude;
 
-        $location.path("/mapView/" + latitude + "/" + longitude);
+        $location.path("/mapView");
     }
 
     $scope.getLocation();
