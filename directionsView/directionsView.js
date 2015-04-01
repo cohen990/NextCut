@@ -1,15 +1,15 @@
 'use strict';
 
-angular.module('myApp.mapView', ['ngRoute', 'ngMaterial'])
+angular.module('myApp.directionsView', ['ngRoute', 'ngMaterial'])
 
 .config(['$routeProvider', function($routeProvider) {
-  $routeProvider.when('/mapView', {
-    templateUrl: 'mapView/mapView.html',
-    controller: 'MapViewController'
+  $routeProvider.when('/directions', {
+    templateUrl: 'directionsView/directionsView.html',
+    controller: 'DirectionsViewController'
 });
 }])
 
-.controller('MapViewController', ['$scope', function($scope)  {
+.controller('DirectionsViewController', ['$scope', function($scope)  {
     var directionsDisplay;
     var directionsService = new google.maps.DirectionsService();
     var map;

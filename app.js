@@ -6,10 +6,11 @@ angular.module('myApp', [
   'ngMaterial',
   'myApp.homeView',
   'myApp.resultsView',
-  'myApp.mapView',
+  'myApp.directionsView',
 ]).
-config(function($routeProvider, $mdThemingProvider) {
+config(function($routeProvider, $mdThemingProvider, $locationProvider) {
   $routeProvider.otherwise({redirectTo: '/'});
+  $locationProvider.html5Mode(true);
   $mdThemingProvider.theme('default')
     .primaryPalette('deep-orange', {
       'default': '400', // by default use shade 400 from the pink palette for primary intentions
