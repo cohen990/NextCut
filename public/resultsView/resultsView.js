@@ -50,9 +50,6 @@ angular.module('myApp.resultsView', ['ngRoute', 'ngMaterial'])
     $scope.printResults = function(results){
         var results = $scope.getAllImages(results);
         var results = $scope.getAllPhoneNumbers(results);
-
-        console.log(results);
-        console.log("Hi")
         $scope.searchResults = results;
         $scope.found = true;
         $scope.$apply();
