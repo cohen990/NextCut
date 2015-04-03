@@ -4,8 +4,7 @@ angular.module('myApp.resultsView', ['ngRoute', 'ngMaterial'])
 
 .config(['$routeProvider', function($routeProvider) {
   $routeProvider.when('/results', {
-    templateUrl: 'resultsView/resultsView.html',
-    controller: 'ResultsController'
+    templateUrl: 'resultsView/resultsView.html'
   });
 }])
 
@@ -20,7 +19,7 @@ angular.module('myApp.resultsView', ['ngRoute', 'ngMaterial'])
 
     $scope.getLocation = function() {
         if (navigator.geolocation) {
-            var id = navigator.geolocation.watchPosition($scope.findHairdressers, $scope.showError);
+            navigator.geolocation.getCurrentPosition($scope.findHairdressers, $scope.showError);
         } else {
             finding.innerHTML = "Geolocation is not supported by this browser.";
         }
@@ -87,7 +86,6 @@ angular.module('myApp.resultsView', ['ngRoute', 'ngMaterial'])
     $scope.goToMap = function(latitude, longitude){
         localStorage["destinationLatitude"] = latitude;
         localStorage["destinationLongitude"] = longitude;
-
         $location.path("/map");
     }
 
