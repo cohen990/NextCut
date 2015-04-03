@@ -3,7 +3,7 @@
 angular.module('myApp.mapView', ['ngRoute', 'ngMaterial'])
 
 .config(['$routeProvider', function($routeProvider) {
-  $routeProvider.when('/mapView', {
+  $routeProvider.when('/map', {
     templateUrl: 'mapView/mapView.html',
     controller: 'MapViewController'
 });
