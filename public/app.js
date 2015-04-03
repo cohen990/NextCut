@@ -23,4 +23,9 @@ config(function($routeProvider, $mdThemingProvider, $locationProvider) {
     .accentPalette('teal', {
       'default': '100' // use shade 200 for default, and keep all other shades the same
     });
+}).
+run(function($rootScope, $location, $window){
+    $rootScope.$on('$routeChangeSuccess', function() {
+        $window.ga('send', 'pageview', { page: $location.url() })
+    })
 });
