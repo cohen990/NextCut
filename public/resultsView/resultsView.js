@@ -19,7 +19,7 @@ angular.module('myApp.resultsView', ['ngRoute', 'ngMaterial'])
 
     $scope.getLocation = function() {
         if (navigator.geolocation) {
-            navigator.geolocation.getCurrentPosition($scope.findHairdressers, $scope.showError);
+            navigator.geolocation.getCurrentPosition($scope.findHairdressers, $scope.showError, {timeout:10000});
         } else {
             finding.innerHTML = "Geolocation is not supported by this browser.";
         }
