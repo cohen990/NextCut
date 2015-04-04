@@ -16,9 +16,10 @@
                             <div class="md-tile-content">{{searchResult.vicinity}}</div>
                         </div>
                         <div layout="column">
+                            <!-- <div class="md-tile-content" ng-show="searchResult.phoneNumber"> number {{searchResult.phoneNumber}}</div>
                             <div class="md-tile-content" ng-show="searchResult.phoneNumber"> number {{searchResult.phoneNumber}}</div>
-                            <div class="md-tile-content" ng-show="searchResult.phoneNumber"> number {{searchResult.phoneNumber}}</div>
-                            <div class="md-tile-content greyed-out" ng-hide="searchResult.phoneNumber">no phone number...</div>
+                            <div class="md-tile-content greyed-out" ng-hide="searchResult.phoneNumber">no phone number...</div> -->
+                            <md-button class="md-primary">open now</md-button>
                             <md-whiteframe class="md-whiteframe-z2 md-tile-content" ng-hide="!searchResult.rating">Rating: {{searchResult.rating}}</md-whiteframe>
                             <md-whiteframe class="md-whiteframe-z1 md-tile-content" ng-show="!searchResult.rating">Rating Unknown</md-whiteframe>
                         </div>

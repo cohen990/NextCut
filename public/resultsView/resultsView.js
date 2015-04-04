@@ -47,7 +47,6 @@ angular.module('myApp.resultsView', ['ngRoute', 'ngMaterial'])
     }
 
     $scope.findHairdressers = function(position) {
-        console.log(position);
         localStorage["originLatitude"] = position.coords.latitude;
         localStorage["originLongitude"] = position.coords.longitude;
         var render = document.getElementById("empty-map-canvas");
