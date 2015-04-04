@@ -1,6 +1,6 @@
 <div ng-controller="ResultsController">
     <div ng-hide="found" id="finding">Finding hairdressers near you...</div>
-    <md-progress-circular md-mode="indeterminate" ng-hide="found"></md-progress-circular>
+    <md-progress-circular md-mode="indeterminate" ng-show="searching"></md-progress-circular>
     <md-content ng-show="found">
         <h4>Showing hair dressers near you. Sorted by closest first</h4>
         <md-list>

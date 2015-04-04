@@ -12,6 +12,7 @@ angular.module('myApp.resultsView', ['ngRoute', 'ngMaterial'])
     var finding = document.getElementById("finding");
 
     $scope.found = false;
+    $scope.searching = false;
 
     $scope.searchResults = [];
 
@@ -19,14 +20,23 @@ angular.module('myApp.resultsView', ['ngRoute', 'ngMaterial'])
 
     $scope.getLocation = function() {
         if (navigator.geolocation) {
+            $scope.searching = true;
             navigator.geolocation.getCurrentPosition($scope.findHairdressers, $scope.showError, {timeout:10000});
         } else {
-            finding.innerHTML = "Geolocation is not supported by this browser.";
+            finding.innerText = "Geolocation is not supported by this browser.";
         }
     }
 
     $scope.showError = function(positionError){
-        finding.innerHtml = "Sorry, something went wrong. Please try again later.";
+        $scope.searching = false;
+        $scope.$apply();
+        console.log(positionError);
+        if(positionError.code === 3){
+            finding.innerText = "Sorry, your request has timed out. Please try again later.";
+        }
+        else{
+            finding.innerText = "Sorry, something has gone wrong. Please try again later.";
+        }
     }
 
     $scope.findHairdressers = function(position) {
@@ -48,6 +58,7 @@ angular.module('myApp.resultsView', ['ngRoute', 'ngMaterial'])
     }
 
     $scope.printResults = function(results){
+        $scope.searching = false;
         var results = $scope.getAllImages(results);
         var results = $scope.getAllPhoneNumbers(results);
         $scope.searchResults = results;
