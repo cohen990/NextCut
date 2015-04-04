@@ -40,7 +40,8 @@ angular.module('myApp.resultsView', ['ngRoute', 'ngMaterial'])
                 lng: position.coords.longitude
             },
             types: ["hair_care"],
-            rankBy: google.maps.places.RankBy.DISTANCE
+            rankBy: google.maps.places.RankBy.DISTANCE,
+            openNow: true
         };
 
         service.nearbySearch(request, $scope.printResults)
