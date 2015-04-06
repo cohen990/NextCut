@@ -1,13 +1,21 @@
 .mainLogo{
-    width: 200px;
+    width: 90px;
     height: 90px;
     margin-left: 10px;
+    margin-top:5px;
 }
 
-h2{
-    font:"Trebuchet MS";
+h1>a{
     color:white;
+    display:inline-block;
+    font:"Trebuchet MS";
+    text-decoration:none;
     font-style: italic;
+    font-weight:900;
+}
+
+body{
+    font:"Trebuchet MS";
 }
 
 .resultImage{
@@ -26,4 +34,46 @@ h2{
 
 #map-canvas{
     height:300px;
+}
+
+#home-view-content{
+    background-image:url(/content/scissors-tools-2121x1414.jpg);
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    margin: auto;
+    min-width: 50%;
+    min-height: 50%;
+    background-size:cover;
+    vertical-align: middle;
+}
+
+#home-view-search{
+    height:100%;
+    margin: auto auto;
+    width:100%;
+  }
+
+.no-show{
+    display:none;
+}
+
+.ch-floating-content{
+    border:40px solid rgb(178, 223, 219);
+    border-radius:10px;
+    background-color: rgb(178, 223, 219)
+}
+
+@media screen and (max-width: 640px){
+    body {
+        background: url(/content/scissors-tools-450x300.jpg);
+        font-size:0.6em;
+    }
+    .ch-floating-content{
+        border:5px solid rgb(178, 223, 219);
+        border-radius:2px;
+        background-color: rgb(178, 223, 219)
+    }
 }
