@@ -1,6 +1,11 @@
 <div ng-controller="HomeViewController">
-    <md-content>
-        <md-subheader>Your next haircut is just a chop, snip and a jump away.</md-subheader>
-        <md-button class="md-raised md-accent" ng-click="GoToResults()">Click here to find nearby hairdressers</md-button>
-    </md-content>
+    <div id="home-view-content">
+  <img src="content/placeholder-2121x1414.jpg" alt="" class="no-show">
+        <md-card id="home-view-search" layout="row" layout-align="center center">
+            <span class="ch-floating-content">
+                <h2 class="md-display-3">Find your next haircut, wherever you are.</h2>
+                <md-button class="md-raised" ng-click="GoToResults()">Click here to find a nearby hairdresser</md-button>
+            </span>
+        </md-card>
+    </div>
 </div>
