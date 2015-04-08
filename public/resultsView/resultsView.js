@@ -19,18 +19,23 @@ angular.module('myApp.resultsView', ['ngRoute', 'ngMaterial'])
     $scope.limit = 3;
 
     $scope.getLocation = function() {
-        if (navigator.geolocation) {
-            $scope.searching = true;
-            navigator.geolocation.getCurrentPosition(
-                 $scope.findHairdressers,
-                 $scope.showError,
-                 {
-                    timeout:30000,
-                    maximumAge: 60000,
-                    enableHighAccuracy:true
-                });
-        } else {
-            finding.innerText = "Geolocation is not supported by this browser.";
+        if(localStorage["originLatitude"] && localStorage["originLongitude"]){
+            $scope.findHairdressers();
+        }
+        else{
+            if (navigator.geolocation) {
+                $scope.searching = true;
+                navigator.geolocation.getCurrentPosition(
+                     $scope.storeLatidudeLongitude,
+                     $scope.showError,
+                     {
+                        timeout:30000,
+                        maximumAge: 60000,
+                        enableHighAccuracy:true
+                    });
+            } else {
+                finding.innerText = "Geolocation is not supported by this browser.";
+            }
         }
     }
 
@@ -46,15 +51,20 @@ angular.module('myApp.resultsView', ['ngRoute', 'ngMaterial'])
         }
     }
 
-    $scope.findHairdressers = function(position) {
+    $scope.storeLatidudeLongitude = function(position) {
         localStorage["originLatitude"] = position.coords.latitude;
         localStorage["originLongitude"] = position.coords.longitude;
+        $scope.findHairdressers();
+    }
+
+    $scope.findHairdressers = function() {
+        console.log(localStorage["originLatitude"])
         var render = document.getElementById("empty-map-canvas");
         var service = new google.maps.places.PlacesService(render);
         var request = {
             location: {
-                lat: position.coords.latitude,
-                lng: position.coords.longitude
+                lat: parseFloat(localStorage["originLatitude"]),
+                lng: parseFloat(localStorage["originLongitude"])
             },
             types: ["hair_care"],
             rankBy: google.maps.places.RankBy.DISTANCE,
