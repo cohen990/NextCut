@@ -48,10 +48,18 @@ body{
     padding-bottom:5px;
 }
 
+#map-container{
+    overflow:visible;
+}
+
 .csj-hanging-tab{
     background-color:#FBFBFB;
     border-bottom-left-radius:5px;
     border-bottom-right-radius:5px;
+}
+
+.csj-small-margin{
+    margin:5px;
 }
 
 #home-view-content{
