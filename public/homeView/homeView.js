@@ -43,6 +43,7 @@ angular.module('myApp.homeView', ['ngRoute', 'ngMaterial'])
 
         localStorage["originLatitude"] = results[0].geometry.location.k;
         localStorage["originLongitude"] = results[0].geometry.location.D;
+        localStorage["csj-postcode"] = $scope.postcode.toUpperCase();
         $scope.GoToResults();
     }
 }]);
