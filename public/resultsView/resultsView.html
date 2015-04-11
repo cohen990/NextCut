@@ -30,6 +30,9 @@
             </md-item>
         </md-list>
     </md-content>
-    <md-button ng-show="found && limit < searchResults.length" ng-click="show3More()" class="md-raised">see more</md-button>
+    <md-button ng-show="limit < searchResults.length" ng-click="show3More()" class="md-raised md-primary full-parent-width">see more</md-button>
+    <div ng-hide="limit < searchResults.length" class="csj-hanging-tab">
+        <md-button ng-disabled="true" class="md-raised full-parent-width">no more results</md-button>
+    </div>
     <div id="empty-map-canvas"></div>
 </div>

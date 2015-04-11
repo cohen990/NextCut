@@ -36,11 +36,29 @@ body{
     height:300px;
 }
 
+.content{
+    position: absolute;
+    background-color:#967f59;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-repeat:repeat;
+    overflow:scroll;
+    padding-bottom:5px;
+}
+
+.csj-hanging-tab{
+    background-color:#FBFBFB;
+    border-bottom-left-radius:5px;
+    border-bottom-right-radius:5px;
+}
+
 #home-view-content{
     background-image:url(/content/scissors-tools-1000x666.jpg);
-    background-color:#967f59;
     background-repeat:no-repeat;
     position: absolute;
+    background-color:#967f59;
     top: 0;
     left: 0;
     right: 0;
@@ -53,11 +71,9 @@ body{
     background-clip: content-box;
 }
 
-#home-view-search{
-    height:100%;
-    margin: auto auto;
+.full-parent-width{
     width:100%;
-  }
+}
 
 .no-show{
     display:none;
