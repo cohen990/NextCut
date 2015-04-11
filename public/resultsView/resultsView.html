@@ -1,8 +1,9 @@
 <div ng-controller="ResultsController">
-    <div ng-hide="found" id="finding">Finding hairdressers near you...</div>
+    <div ng-hide="found" id="finding">Finding hairdressers near {{postcode}}...</div>
     <md-progress-circular md-mode="indeterminate" ng-show="searching"></md-progress-circular>
     <md-content ng-show="found">
-        <h4>Showing hair dressers near you. Sorted by closest first</h4>
+        <h4>Showing hair dressers near {{postcode}}.</h4>
+        <p>Sorted by closest first</p>
         <md-list>
             <md-item ng-repeat="searchResult in searchResults | limitTo: limit">
                 <md-item-content>
