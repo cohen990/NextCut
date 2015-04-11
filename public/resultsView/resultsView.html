@@ -29,6 +29,6 @@
             </md-item>
         </md-list>
     </md-content>
-    <md-button ng-show="found && limit < 20" ng-click="show3More()" class="md-raised">see more</md-button>
+    <md-button ng-show="found && limit < searchResults.length" ng-click="show3More()" class="md-raised">see more</md-button>
     <div id="empty-map-canvas"></div>
 </div>

@@ -22,7 +22,7 @@ angular.module('myApp.homeView', ['ngRoute', 'ngMaterial'])
         }
     }
 
-    $scope.postcode = 'n19 4ta';
+    $scope.postcode;
 
     $scope.findLatitudeLongitude = function(){
         var geocoder = new google.maps.Geocoder();

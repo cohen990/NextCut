@@ -37,7 +37,8 @@ body{
 }
 
 #home-view-content{
-    background-image:url(/content/scissors-tools-2121x1414.jpg);
+    background-image:url(/content/scissors-tools-1000x666.jpg);
+    background-color:#967f59;
     position: absolute;
     top: 0;
     left: 0;
@@ -67,7 +68,7 @@ body{
 }
 
 @media screen and (max-width: 640px){
-    body {
+    #home-view-content {
         background: url(/content/scissors-tools-450x300.jpg);
         font-size:0.6em;
     }

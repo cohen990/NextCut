@@ -18,44 +18,47 @@ angular.module('myApp.resultsView', ['ngRoute', 'ngMaterial'])
 
     $scope.limit = 3;
 
-    $scope.getLocation = function() {
-        if(localStorage["originLatitude"] && localStorage["originLongitude"]){
-            $scope.findHairdressers();
-        }
-        else{
-            if (navigator.geolocation) {
-                $scope.searching = true;
-                navigator.geolocation.getCurrentPosition(
-                     $scope.storeLatidudeLongitude,
-                     $scope.showError,
-                     {
-                        timeout:30000,
-                        maximumAge: 60000,
-                        enableHighAccuracy:true
-                    });
-            } else {
-                finding.innerText = "Geolocation is not supported by this browser.";
-            }
-        }
-    }
+    // $scope.getLocation = function() {
+    //     if(localStorage["originLatitude"] && localStorage["originLongitude"]){
+    //         $scope.findHairdressers();
+    //     }
+    //     else{
+    //         if (navigator.geolocation) {
+    //             $scope.searching = true;
+    //             navigator.geolocation.getCurrentPosition(
+    //                  $scope.storeLatidudeLongitude,
+    //                  $scope.showError,
+    //                  {
+    //                     timeout:30000,
+    //                     maximumAge: 60000,
+    //                     enableHighAccuracy:true
+    //                 });
+    //         } else {
+    //             finding.innerText = "Geolocation is not supported by this browser.";
+    //         }
+    //     }
+    // }
 
-    $scope.showError = function(positionError){
-        $scope.searching = false;
-        $scope.$apply();
-        console.log(positionError);
-        if(positionError.code === 3){
-            finding.innerText = "Sorry, your request has timed out. Please try again later.";
-        }
-        else{
-            finding.innerText = "Sorry, something has gone wrong. Please try again later.";
-        }
-    }
+    // $scope.showError = function(positionError){
+    //     $scope.searching = false;
+    //     $scope.$apply();
+    //     console.log(positionError);
+    //     if(positionError.code === 1){
+    //         finding.innerText = "You need to allow us to use your position. Please change your device settings or do a postcode search.";
+    //     }
+    //     if(positionError.code === 3){
+    //         finding.innerText = "Sorry, your request has timed out. Please try again later.";
+    //     }
+    //     else{
+    //         finding.innerText = "Sorry, something has gone wrong. Please try again later.";
+    //     }
+    // }
 
-    $scope.storeLatidudeLongitude = function(position) {
-        localStorage["originLatitude"] = position.coords.latitude;
-        localStorage["originLongitude"] = position.coords.longitude;
-        $scope.findHairdressers();
-    }
+    // $scope.storeLatidudeLongitude = function(position) {
+    //     localStorage["originLatitude"] = position.coords.latitude;
+    //     localStorage["originLongitude"] = position.coords.longitude;
+    //     $scope.findHairdressers();
+    // }
 
     $scope.findHairdressers = function() {
         console.log(localStorage["originLatitude"])
@@ -118,5 +121,6 @@ angular.module('myApp.resultsView', ['ngRoute', 'ngMaterial'])
         $location.path("/map");
     }
 
-    $scope.getLocation();
+    // $scope.getLocation();
+    $scope.findHairdressers();
 }]);

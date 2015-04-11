@@ -7,14 +7,14 @@
                 <form name="userForm">
                     <md-input-container flex>
                         <label>Post Code</label>
-                        <input ng-model="postcode" placeholder="your postcode" required>
+                        <input ng-model="postcode" placeholder="post code to search nearby" required>
                         <div ng-messages="postcode.$error">
                             <!-- <div ng-message="required">This is required.</div> -->
                         </div>
                     </md-input-container>
-                    <md-button class="md-raised" ng-click="PostcodeLookup() ">Postcode search</md-button>
+                    <md-button class="md-raised" ng-click="PostcodeLookup() ">Search</md-button>
                 </form>
-                <md-button class="md-raised" ng-click="GoToResults()">Current location</md-button>
+                <!-- <md-button class="md-raised" ng-click="GoToResults()">Current location</md-button> -->
             </span>
         </md-card>
     </div>
