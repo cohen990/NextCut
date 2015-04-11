@@ -33,11 +33,13 @@
   <!--[if lt IE 7]>
       <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
   <![endif]-->
-  <md-toolbar layout="row">
-    <a href="/">
+  <md-toolbar layout="row" layout-align="start center">
+    <a href="/" >
       <img class="mainLogo" src="Content/scissors600x601.gif" alt="ChopSnipJump logo"/>
     </a>
-    <h1 class="md-display-2"><a href="/">ChopSnipJump</a></h1>
+    <h1 class="md-display-2" layout="row" layout-align="start center">
+      <a href="/">ChopSnipJump</a>
+    </h1>
   </md-toolbar>
   <div ng-view class="content"></div>
 
