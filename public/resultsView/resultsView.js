@@ -17,6 +17,8 @@ angular.module('myApp.resultsView', ['ngRoute', 'ngMaterial'])
     $scope.searchResults = [];
     $scope.limit = 10;
 
+    $scope.service;
+
     // $scope.getLocation = function() {
     //     if(localStorage["originLatitude"] && localStorage["originLongitude"]){
     //         $scope.findHairdressers();
@@ -64,7 +66,7 @@ angular.module('myApp.resultsView', ['ngRoute', 'ngMaterial'])
         $scope.postcode = localStorage["csj-postcode"]
         console.log(localStorage["originLatitude"])
         var render = document.getElementById("empty-map-canvas");
-        var service = new google.maps.places.PlacesService(render);
+        $scope.service = new google.maps.places.PlacesService(render);
         var request = {
             location: {
                 lat: parseFloat(localStorage["originLatitude"]),
@@ -75,7 +77,7 @@ angular.module('myApp.resultsView', ['ngRoute', 'ngMaterial'])
             openNow: true
         };
 
-        service.nearbySearch(request, $scope.printResults)
+        $scope.service.nearbySearch(request, $scope.printResults)
     }
 
     $scope.printResults = function(results){
@@ -84,6 +86,7 @@ angular.module('myApp.resultsView', ['ngRoute', 'ngMaterial'])
         var results = $scope.getAllPhoneNumbers(results);
         $scope.searchResults = results;
         $scope.found = true;
+        console.log(results);
         $scope.$apply();
     }
 
@@ -116,10 +119,17 @@ angular.module('myApp.resultsView', ['ngRoute', 'ngMaterial'])
         return results;
     }
 
-    $scope.goToMap = function(latitude, longitude){
+    $scope.goToMap = function(latitude, longitude, placeId){
         localStorage["destinationLatitude"] = latitude;
         localStorage["destinationLongitude"] = longitude;
-        $location.path("/map");
+        $scope.getDetails(placeId);
+        // $location.path("/map");
+    }
+
+    $scope.getDetails = function(placeId){
+        $scope.service.getDetails({placeId: placeId}, function(PlaceResult, PlacesServiceStatus){
+            console.log(PlaceResult);
+        })
     }
 
     // $scope.getLocation();
