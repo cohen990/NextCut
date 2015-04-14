@@ -43,7 +43,7 @@ body{
 
 .content{
     position: absolute;
-    background-color:#967f59;
+    background-color:#968B78;
     top: 0;
     left: 0;
     right: 0;
@@ -71,7 +71,7 @@ body{
     background-image:url(/content/scissors-tools-1000x666.jpg);
     background-repeat:no-repeat;
     position: absolute;
-    background-color:#967f59;
+    background-color:#968B78;
     top: 0;
     left: 0;
     right: 0;
@@ -119,12 +119,12 @@ body{
     }
 
     h1{
-        margin:0.2em;
+        margin:0;
         vertical-align: center;
     }
 
     h1>a{
-        font-size:0.6em;
-        margin:0.2em;
+        font-size:1.2em;
+        margin:0;
     }
 }
