@@ -24,13 +24,13 @@ body{
 }
 
 .resultImage{
-    height:160px;
-    width:160px;
+    height:75px;
+    width:75px;
 }
 
-.content{
-    padding-left:5px;
-    padding-right:5px;
+.resultImage>img{
+    max-height:75px;
+    max-width:75px;
 }
 
 .greyed-out{
@@ -44,13 +44,15 @@ body{
 .content{
     position: absolute;
     background-color:#968B78;
-    top: 0;
     left: 0;
     right: 0;
     bottom: 0;
+    top:100px;
     background-repeat:repeat;
     overflow:scroll;
     padding-bottom:5px;
+    padding-left:5px;
+    padding-right:5px;
 }
 
 #map-container{
@@ -99,6 +101,10 @@ body{
 }
 
 @media screen and (max-width: 640px), screen and (max-height:640px){
+	.content{
+	    top:65px;
+	}
+
     #home-view-content {
         background: url(/content/scissors-tools-450x300.jpg);
         font-size:0.6em;
@@ -127,4 +133,41 @@ body{
         font-size:1.2em;
         margin:0;
     }
+}
+
+.nc-salon-card{
+    padding-left:10px;
+    padding-right:10px;
+    height: 150px;
+    margin:auto;
+    width:960px;
+}
+
+/*.nc-salon-card-name{
+    position:relative;
+}
+
+.nc-openFlag{
+    position:absolute;
+    bottom:10px;
+    display:inline;
+    padding:0;
+}*/
+
+.nc-card-column{
+    height:100%;
+    padding-top:5px;
+    padding-bottom:5px;
+    width:20%;
+    min-width:100px;
+}
+
+.nc-card-column-large{
+    width:60%;
+    min-width:350px;
+}
+
+.nc-card-column-small{
+    width:15%;
+    min-width:75px;
 }

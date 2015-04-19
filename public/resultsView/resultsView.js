@@ -18,7 +18,7 @@ angular.module('myApp.resultsView', ['ngRoute', 'ngMaterial'])
 
     $scope.searchResults = [];
 
-    $scope.limit = 3;
+    $scope.limit = 10;
 
     // $scope.getLocation = function() {
     //     if(localStorage["originLatitude"] && localStorage["originLongitude"]){
@@ -91,7 +91,7 @@ angular.module('myApp.resultsView', ['ngRoute', 'ngMaterial'])
     }
 
     $scope.show3More = function(){
-        $scope.limit += 3;
+        $scope.limit += 10;
     }
 
     $scope.getAllImages = function(results){
