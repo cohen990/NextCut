@@ -13,11 +13,8 @@ angular.module('myApp.resultsView', ['ngRoute', 'ngMaterial'])
 
     $scope.found = false;
     $scope.searching = false;
-
     $scope.postcode;
-
     $scope.searchResults = [];
-
     $scope.limit = 10;
 
     // $scope.getLocation = function() {
@@ -63,7 +60,7 @@ angular.module('myApp.resultsView', ['ngRoute', 'ngMaterial'])
     // }
 
     $scope.findHairdressers = function() {
-
+        $scope.searching = true;
         $scope.postcode = localStorage["csj-postcode"]
         console.log(localStorage["originLatitude"])
         var render = document.getElementById("empty-map-canvas");
