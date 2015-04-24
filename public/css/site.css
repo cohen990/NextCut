@@ -60,7 +60,7 @@ body{
 }
 
 .csj-hanging-tab{
-    background-color:#FBFBFB;
+    background-color:#F3F3F3;
     border-bottom-left-radius:5px;
     border-bottom-right-radius:5px;
 }
@@ -170,4 +170,33 @@ body{
 .nc-card-column-small{
     width:15%;
     min-width:75px;
+}
+
+#finding{
+    padding-bottom:15px;
+}
+
+#finding>p{
+    text-align: center;
+}
+
+#finding>md-progress-circular{
+    margin:auto;
+}
+
+h3{
+    float:left;
+    /* using padding instead of margin because angular material design overrides margin for an h3 tag */
+    padding-left:20px;
+    max-width:45%;
+}
+
+#filter{
+    float:right;
+    margin-right:20px;
+    max-width:45%;
+}
+
+md-list{
+    clear:both;
 }

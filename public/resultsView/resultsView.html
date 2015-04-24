@@ -1,9 +1,12 @@
 <div ng-controller="ResultsController">
-    <div ng-hide="found" id="finding">Finding hairdressers near {{postcode}}...</div>
-    <md-progress-circular md-mode="indeterminate" ng-show="searching"></md-progress-circular>
+    <md-content ng-hide="found" id="finding" layout="column" layout-align"center center">
+    	<p>Finding hairdressers near {{postcode}}...</p>
+    	<md-progress-circular md-mode="indeterminate" ng-show="searching"></md-progress-circular>
+    </md-content>
+    
     <md-content ng-show="found">
-        <h4>Showing hair dressers near {{postcode}}.</h4>
-        <p>Sorted by closest first</p>
+        <h3>{{postcode}}</h3>
+        <p id="filter">Sorted by closest first</p>
         <md-list div layout="column" layout-gt-md="row" layout-wrap>
             <md-item flex-gt-md="50" style="overflow:hidden;" ng-repeat="searchResult in searchResults | limitTo: limit">
                 <md-item-content>
@@ -31,7 +34,7 @@
                         </div>
                     </div>
                 </md-item-content>
-            <md-divider md-inset ng-if="!$last"></md-divider>
+            	<md-divider></md-divider>
             </md-item>
         </md-list>
     </md-content>
