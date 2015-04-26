@@ -80,8 +80,7 @@ angular.module('myApp.resultsView', ['ngRoute', 'ngMaterial'])
 
     $scope.printResults = function(results){
         $scope.searching = false;
-        var results = $scope.getAllImages(results);
-        var results = $scope.getAllPhoneNumbers(results);
+        results = $scope.processResults(results);
         $scope.searchResults = results;
         $scope.found = true;
         $scope.$apply();
@@ -89,6 +88,24 @@ angular.module('myApp.resultsView', ['ngRoute', 'ngMaterial'])
 
     $scope.show3More = function(){
         $scope.limit += 10;
+    }
+
+    $scope.processResults = function(results){
+        results = $scope.getAllImages(results);
+        results = $scope.getAllPhoneNumbers(results);
+        results = $scope.getRelativeRating(results);
+
+        return results;
+    }
+
+    $scope.getRelativeRating = function(results){
+        for (var i = results.length - 1; i >= 0; i--) {
+            var relativeRating = (results[i].rating / 5) * 100;
+
+            results[i].ratingWidth = {"width": relativeRating + "%"}
+        };
+
+        return results;
     }
 
     $scope.getAllImages = function(results){
