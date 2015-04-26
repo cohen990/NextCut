@@ -24,13 +24,14 @@ body{
 }
 
 .resultImage{
-    height:75px;
-    width:75px;
+    height:100px;
+    width:100px;
+    margin-bottom:5px;
 }
 
 .resultImage>img{
-    max-height:75px;
-    max-width:75px;
+    max-height:100px;
+    max-width:100px;
 }
 
 .greyed-out{
@@ -100,41 +101,6 @@ body{
     background-color: rgb(178, 223, 219)
 }
 
-@media screen and (max-width: 640px), screen and (max-height:640px){
-	.content{
-	    top:65px;
-	}
-
-    #home-view-content {
-        background: url(/content/scissors-tools-450x300.jpg);
-        font-size:0.6em;
-        background-size:cover;
-        background-position:center;
-    }
-    .ch-floating-content{
-        border:5px solid rgb(178, 223, 219);
-        border-radius:2px;
-        background-color: rgb(178, 223, 219)
-    }
-
-    .mainLogo{
-        width: 60px;
-        height: 60px;
-        margin-left: 5px;
-        margin-top:5px;
-    }
-
-    h1{
-        margin:0;
-        vertical-align: center;
-    }
-
-    h1>a{
-        font-size:1.2em;
-        margin:0;
-    }
-}
-
 .nc-salon-card{
     padding-left:10px;
     padding-right:10px;
@@ -199,4 +165,68 @@ h3{
 
 md-list{
     clear:both;
+}
+
+.ratingStars{
+    width:100px;
+    height:20px;
+    display:block;
+}
+
+.ratingStars-background{
+    background-color:yellow;
+    border-right:1px solid black;
+}
+
+
+
+@media screen and (max-width: 640px), screen and (max-height:640px){
+    .content{
+        top:65px;
+    }
+
+    #home-view-content {
+        background: url(/content/scissors-tools-450x300.jpg);
+        font-size:0.6em;
+        background-size:cover;
+        background-position:center;
+    }
+    .ch-floating-content{
+        border:5px solid rgb(178, 223, 219);
+        border-radius:2px;
+        background-color: rgb(178, 223, 219)
+    }
+
+    .mainLogo{
+        width: 60px;
+        height: 60px;
+        margin-left: 5px;
+        margin-top:5px;
+    }
+
+    h1{
+        margin:0;
+        vertical-align: center;
+    }
+
+    h1>a{
+        font-size:1.2em;
+        margin:0;
+    }
+
+    .resultImage{
+        height:75px;
+        width:75px;
+    }
+
+    .resultImage>img{
+        max-height:75px;
+        max-width:75px;
+    }
+
+
+    .ratingStars{
+        width:75px;
+        height:15px;
+    }
 }
